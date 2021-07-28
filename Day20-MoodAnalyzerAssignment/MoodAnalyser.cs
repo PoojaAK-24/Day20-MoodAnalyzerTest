@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Day20_MoodAnalyzerAssignment
 {
+    
     public class MoodAnalyser
     {
         private string message;
