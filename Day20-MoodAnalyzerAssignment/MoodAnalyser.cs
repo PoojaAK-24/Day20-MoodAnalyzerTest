@@ -30,6 +30,7 @@ namespace Day20_MoodAnalyzerAssignment
             catch (NullReferenceException)
             {
                 throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NULL_MESSAGE, "Mood should not be null");
+           
             }
         }
     }

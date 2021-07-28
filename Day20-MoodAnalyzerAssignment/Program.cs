@@ -6,7 +6,7 @@ namespace Day20_MoodAnalyzerAssignment
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("*Welcome To Mood Analyzer Program*");
+            Console.WriteLine("**Welcome To Mood Analyzer Program*");
         }
     }
 }
