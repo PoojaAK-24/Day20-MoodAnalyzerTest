@@ -41,7 +41,7 @@ namespace Day20_MoodAnalyzerAssignment
                 throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NO_SUCH_METHOD, "Constructor is not found");
             }
         }
-        //UC-4
+         //UC-4
     }
 }
 
