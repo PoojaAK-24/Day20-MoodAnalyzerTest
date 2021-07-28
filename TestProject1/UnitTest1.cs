@@ -22,6 +22,16 @@ namespace TestProject1
             string result = obj.analyseMood();
             Assert.AreEqual("SAD", result);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(MoodAnalyserCustomException))]
+        public void GivenMoodNull_ShouldThrowException()
+        {
+            MoodAnalyser obj = new MoodAnalyser(null);
+            string result = obj.analyseMood();
+            Assert.AreEqual("HAPPY", result);
+
+        }
     }
 }
 
