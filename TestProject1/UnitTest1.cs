@@ -22,8 +22,6 @@ namespace TestProject1
             string result = obj.analyseMood();
             Assert.AreEqual("SAD", result);
         }
-
     }
-
 }
 
