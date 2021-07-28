@@ -10,18 +10,19 @@ namespace TestProject1
         [TestMethod]
         public void GivenMoodHappy_ShouldReturnHappy()
         {
-            MoodAnalyser obj = new MoodAnalyser("I am in happy mood");
+            MoodAnalyser obj = new MoodAnalyser("HAPPY");
             string result = obj.analyseMood();
-            Assert.AreEqual("SAD", result);
+            Assert.AreEqual("HAPPY", result);
         }
 
         [TestMethod]
         public void GivenMoodSad_ShouldReturnSad()
         {
-            MoodAnalyser obj = new MoodAnalyser("I am in sad mood ");
+            MoodAnalyser obj = new MoodAnalyser("sad");
             string result = obj.analyseMood();
             Assert.AreEqual("SAD", result);
         }
 
     }
 }
+
