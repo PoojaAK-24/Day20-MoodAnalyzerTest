@@ -6,7 +6,7 @@ namespace TestProject1
     [TestClass]
     public class UnitTest1
     {
-        //Refactor UC-1
+        #region Refactor UC-1
         [TestMethod]
         public void GivenDifferentString_ShouldReturnSad()
         {
@@ -22,9 +22,9 @@ namespace TestProject1
             string result = obj.analyseMood();
             Assert.AreEqual("SAD", result);
         }
-        //Refactor UC-1
+        #endregion Refactor UC-1
 
-        //UC-2
+        #region UC-2
         [TestMethod]
         [ExpectedException(typeof(MoodAnalyserCustomException))]
         public void GivenMoodNull_ShouldThrowException()
@@ -34,9 +34,9 @@ namespace TestProject1
             Assert.AreEqual("HAPPY", result);
 
         }
-        //UC-2
+        #endregion UC-2
 
-        //UC-3
+        #region UC-3
         [TestMethod]
         [ExpectedException(typeof(MoodAnalyserCustomException))]
         public void GivenMoodEmpty_ShouldThrowException()
@@ -46,10 +46,9 @@ namespace TestProject1
             Assert.AreEqual("HAPPY", result);
 
         }
-        //UC-3
+        #endregion UC-3
 
-
-        //UC-4
+        #region UC-4
         [TestMethod]
         public void GivenMoodAnalyseClassName_ShouldReturnMoodAnalyseObject()
         {
@@ -82,6 +81,41 @@ namespace TestProject1
             expected.Equals(obj);
 
         }
-        //UC-4
+        #endregion UC-4
+
+        #region UC-5
+
+        [TestMethod]
+        public void GivenMoodAnalyser_ShouldReturnMoodAnalyserObject()
+        {
+            string message = null;
+            object expected = new MoodAnalyser(message);
+            object obj = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("Mood_Analyser.MoodAnalyser", "MoodAnalyser", "SAD");
+            expected.Equals(obj);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(MoodAnalyserCustomException))]
+
+        public void GivenMoodAnalyserWrongClassName_ShouldThrowMoodAnalysisException()
+        {
+            string message = null;
+            object expected = new MoodAnalyser(message);
+            object obj = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("Mood_Analyser.moodnalyser", "MoodAnalyser", "SAD");
+            expected.Equals(obj);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(MoodAnalyserCustomException))]
+
+        public void GivenMoodAnalyserClassNameWithNoProperConstructor_ShouldThrowMoodAnalysisException()
+        {
+            string message = null;
+            object expected = new MoodAnalyser(message);
+            object obj = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("Mood_Analyser.MoodAnalyser", "moodanalyser", "SAD");
+            expected.Equals(obj);
+        }
+        #endregion UC-5
     }
+
 }

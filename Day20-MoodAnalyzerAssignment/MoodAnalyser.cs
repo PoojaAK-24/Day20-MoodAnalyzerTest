@@ -4,7 +4,6 @@ using System.Text;
 
 namespace Day20_MoodAnalyzerAssignment
 {
-    
     public class MoodAnalyser
     {
         private string message;
@@ -33,6 +32,7 @@ namespace Day20_MoodAnalyzerAssignment
             catch (NullReferenceException)
             {
                 throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NULL_MESSAGE, "Mood should not be null");
+           
             }
         }
     }
