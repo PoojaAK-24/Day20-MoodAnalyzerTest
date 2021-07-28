@@ -19,6 +19,7 @@ namespace Day20_MoodAnalyzerAssignment
         public MoodAnalyserCustomException(ExceptionType Type, String message) : base(message)
         {
             this.type = Type;
+       
         }
     }
 }
